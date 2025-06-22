@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#F1F8E9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Judul -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simulasi Prediksi Harga Emas"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#33691E"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <EditText
+            android:id="@+id/inputTanggal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pilih Tanggal Prediksi"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="none"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="16dp" />
+
+
+        <!-- Input daftar harga (60 harga dipisahkan koma) -->
+        <EditText
+            android:id="@+id/inputJumlahGram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan jumlah gram emas (misal: 5.0)"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Tombol prediksi -->
+        <Button
+            android:id="@+id/btnPrediksi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prediksi Harga"
+            android:backgroundTint="#8BC34A"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Hasil prediksi -->
+        <TextView
+            android:id="@+id/outputHasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hasil prediksi akan muncul di sini."
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:padding="8dp"
+            android:background="#DCE775"
+            android:layout_marginBottom="12dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8E1"
+    tools:context=".ui.DatasetActivity">
+
+    <!-- Header: Back button + Judul -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#A5D6A7">>
+
+        <!-- Touch target back button diperbesar -->
+        <FrameLayout
+            android:id="@+id/backButtonContainer"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_custom_back"
+                android:contentDescription="Kembali" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/backButtonContainer"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:text="FITUR"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+    </RelativeLayout>
+
+    <!-- Konten Scroll -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_below="@id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Daftar Fitur -->
+            <TextView
+                android:id="@+id/fiturList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:layout_marginBottom="16dp"
+                android:text="• Prediksi harga emas berdasarkan data tanggal dan harga tertinggi\n• Model AI berbasis TensorFlow Lite\n• Input data secara langsung\n• Tampilan hasil prediksi secara numerik\n• Visualisasi grafik hasil prediksi\n• Penyimpanan lokal hasil prediksi" />
+
+            <!-- Penjelasan Tambahan -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aplikasi ini dirancang untuk pengguna yang ingin memantau dan memperkirakan harga emas dengan cepat dan praktis di perangkat Android mereka."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="24dp" />
+
+            <!-- DATE -->
+            <TextView
+                android:id="@+id/listTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kolom ini berisi informasi tanggal setiap pencatatan harga emas. Tanggal digunakan sebagai referensi waktu untuk model melakukan prediksi tren pergerakan harga emas dari waktu ke waktu."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
+
+            <!-- HIGH PRICE -->
+            <TextView
+                android:id="@+id/highTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="High Price"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Merupakan harga tertinggi emas yang tercatat dalam satu hari tertentu. Nilai ini digunakan untuk membantu model menentukan puncak pergerakan harga sebagai input prediksi selanjutnya."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
+
+            <!-- LOW PRICE -->
+            <TextView
+                android:id="@+id/lowTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Low Price"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Menunjukkan harga terendah emas yang tercatat pada hari tersebut. Data ini memberikan gambaran tentang fluktuasi harian dan digunakan sebagai bagian dari analisis risiko dalam prediksi harga."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

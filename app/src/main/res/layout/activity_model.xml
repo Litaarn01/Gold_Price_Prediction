@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF3E0">
+
+    <!-- Header: Back button + Judul -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#A5D6A7">
+
+        <!-- Touch target back button diperbesar -->
+        <FrameLayout
+            android:id="@+id/backButtonContainer"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_custom_back"
+                android:contentDescription="Kembali" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/backButtonContainer"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:text="MODEL"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+    </RelativeLayout>
+
+    <!-- Konten Scroll -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_below="@id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Arsitektur Model -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Arsitektur Model"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:text="Aplikasi ini menggunakan model Recurrent Neural Network (RNN), tepatnya jenis LSTM (Long Short-Term Memory), untuk memprediksi harga emas berdasarkan data historis. Model ini dilatih dengan data berurutan berupa 60 harga tertinggi sebelumnya untuk memprediksi harga berikutnya. RNN efektif untuk data deret waktu (time series) karena mampu mengingat pola jangka pendek dan panjang.\n\nModel dilatih menggunakan TensorFlow dan dikonversi ke format .tflite agar dapat digunakan secara efisien pada perangkat Android. Input model berupa array 3D dengan format [1, 60, 1], dan output-nya adalah satu nilai prediksi harga emas untuk hari berikutnya." />
+
+            <!-- Model ML -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Model Machine Learning"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Pre-Processing -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Pre-Processing"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Data Transform"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_preprocessing1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:text="Kode ini menghilangkan fitur yang tidak relevan untuk model prediksi, yaitu kolom Vol dan Change %. Kolom tersebut di-drop karena Vol tidak tersedia konsisten dan Change % adalah nilai turunan dari harga yang bisa menyebabkan data leakage." />
+
+            <!-- 2. Normalisasi Data -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_preprocessing2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:text="Kode ini melakukan normalisasi kolom Price menggunakan Min-Max Scaling untuk mengubah skala data ke rentang 0-1. Ini penting untuk meningkatkan performa dan kestabilan pelatihan model." />
+
+            <!-- Modelling RNN -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Modelling RNN"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_modelling1" />
+
+            <TextView
+                android:id="@+id/modellingDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:text="Fungsi define_model() membangun model prediksi menggunakan arsitektur RNN berbasis LSTM. Model terdiri dari tiga lapisan LSTM berisi 64 unit, dengan dropout untuk mencegah overfitting, diikuti Dense 32 neuron dan 1 output neuron. Model dikompilasi dengan loss MSE dan optimizer Nadam." />
+
+            <!-- Plot Model -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Plot Model"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/plotmodelImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_plotmodel" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:text="Model Keras (.h5) dikonversi ke format TensorFlow Lite (.tflite) untuk digunakan di perangkat Android. Proses konversi mencakup pemuatan model, penambahan dukungan ops seperti LSTM, konfigurasi stabilitas, optimasi ukuran, konversi, dan penyimpanan sebagai model_gold_price.tflite agar dapat digunakan secara efisien dan langsung di aplikasi Android." />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

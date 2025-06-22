@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDE7">
+
+    <!-- Header: Back button + Judul -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#A5D6A7">>
+
+        <!-- Touch target back button diperbesar -->
+        <FrameLayout
+            android:id="@+id/backButtonContainer"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_custom_back"
+                android:contentDescription="Kembali" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/backButtonContainer"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:text="DATASET"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+    </RelativeLayout>
+
+    <!-- Scrollable Konten -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_below="@id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Deskripsi -->
+            <TextView
+                android:id="@+id/datasetTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#795548"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/datasetDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp"
+                android:text="Dataset yang digunakan dalam aplikasi ini berisi data historis harga emas harian. Beberapa kolom yang digunakan untuk pelatihan model antara lain:\n\n• Tanggal\n• Harga Tertinggi Harian\n• Harga Terendah\n\nData ini kemudian diproses dan digunakan sebagai input untuk model machine learning yang dipakai dalam aplikasi.\n\nSumber dataset dapat berupa data dari Kaggle" />
+
+            <!-- List Dataset -->
+            <TextView
+                android:id="@+id/listTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="List Dataset"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Grid Dataset -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginBottom="24dp">
+
+                <!-- Kolom Date -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_card_column"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Date"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:gravity="center"
+                        android:layout_marginBottom="4dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#888" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-02" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-03" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-04" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-05" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-06" android:padding="4dp" />
+                </LinearLayout>
+
+                <!-- Kolom High -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_card_column"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="High Price"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:gravity="center"
+                        android:layout_marginBottom="4dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#888" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1695.0" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1689.3" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1664.4" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1663.8" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1662.6" android:padding="4dp" />
+                </LinearLayout>
+
+                <!-- Kolom Low -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_card_column"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Low Price"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:gravity="center"
+                        android:layout_marginBottom="4dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#888" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1672.1" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1664.3" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1630.0" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="164.3" android:padding="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1648.8" android:padding="4dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

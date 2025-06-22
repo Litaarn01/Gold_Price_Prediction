@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8E1">
+
+    <!-- Header: Back button + Judul -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#A5D6A7">>
+
+        <FrameLayout
+            android:id="@+id/backButtonContainer"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_custom_back"
+                android:contentDescription="Kembali" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/backButtonContainer"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:text="Tentang Aplikasi"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+    </RelativeLayout>
+
+    <!-- Isi ScrollView -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_below="@id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logo"
+                android:contentDescription="Logo Aplikasi" />
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Gold Price Prediction"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/aboutText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Aplikasi ini digunakan untuk memprediksi harga emas berdasarkan data masukan seperti tanggal dan harga tertinggi. Prediksi dilakukan menggunakan model Machine Learning yang telah dikonversi ke TensorFlow Lite untuk efisiensi pada perangkat mobile."
+                android:textSize="16sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/linkKaggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/kaggle_link"
+                android:textSize="16sp"
+                android:textColor="#1E88E5"
+                android:autoLink="web"
+                android:linksClickable="true" />
+
+            <TextView
+                android:id="@+id/carakerjaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Cara Kerja Aplikasi"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/caraText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="1. Pengguna memasukkan tanggal dan berat emas (gram)\n2. Data tersebut diproses oleh model ML (LSTM)\n3. Model menghasilkan prediksi harga emas berikutnya\n4. Hasil ditampilkan ke layar."
+                android:textSize="16sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:id="@+id/madeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Made by Elita Arini"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

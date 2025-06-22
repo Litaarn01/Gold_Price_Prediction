@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9F9">
+
+    <!-- Judul Header -->
+    <TextView
+        android:id="@+id/tvJudul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Halaman Utama"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:drawableStart="@drawable/ic_custom_back"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:textColor="#333333" />
+
+    <!-- Konten Scrollable -->
+    <ScrollView
+        android:id="@+id/scrollContent"
+        android:layout_below="@id/tvJudul"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Garis pemisah -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#999999"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Menu Item 1 -->
+            <LinearLayout style="@style/MenuItem" android:layout_height="80dp" android:onClick="openAbout">
+                <ImageView android:src="@drawable/ic_person" style="@style/MenuIcon" />
+                <TextView android:text="Tentang Aplikasi" style="@style/MenuText" />
+            </LinearLayout>
+            <View style="@style/MenuDivider" />
+
+            <!-- Menu Item 2 -->
+            <LinearLayout style="@style/MenuItem" android:layout_height="80dp" android:onClick="openDataset">
+                <ImageView android:src="@drawable/ic_menu_book" style="@style/MenuIcon" />
+                <TextView android:text="Dataset" style="@style/MenuText" />
+            </LinearLayout>
+            <View style="@style/MenuDivider" />
+
+            <!-- Menu Item 3 -->
+            <LinearLayout style="@style/MenuItem" android:layout_height="80dp" android:onClick="openFitur">
+                <ImageView android:src="@drawable/ic_insert_drive_file" style="@style/MenuIcon" />
+                <TextView android:text="Fitur" style="@style/MenuText" />
+            </LinearLayout>
+            <View style="@style/MenuDivider" />
+
+            <!-- Menu Item 4 -->
+            <LinearLayout style="@style/MenuItem" android:layout_height="80dp" android:onClick="openModel">
+                <ImageView android:src="@drawable/ic_check_circle" style="@style/MenuIcon" />
+                <TextView android:text="Model" style="@style/MenuText" />
+            </LinearLayout>
+            <View style="@style/MenuDivider" />
+
+            <!-- Menu Item 5 -->
+            <LinearLayout style="@style/MenuItem" android:layout_height="80dp" android:onClick="openSimulasi">
+                <ImageView android:src="@drawable/ic_bar_chart" style="@style/MenuIcon" />
+                <TextView
+                    style="@style/MenuText"
+                    android:layout_width="wrap_content"
+                    android:text="Simulasi" />
+            </LinearLayout>
+            <View style="@style/MenuDivider" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
