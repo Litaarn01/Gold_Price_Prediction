@@ -44,5 +44,9 @@ class MainMenuActivity : AppCompatActivity() {
     fun openSimulasi(view: View) {
         startActivity(Intent(this, SimulationActivity::class.java))
     }
+
+    fun openProfile(view: View) {
+        startActivity(Intent(this, ProfileActivity::class.java))
+    }
 }
 

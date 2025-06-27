@@ -11,7 +11,7 @@
         android:id="@+id/imgIcon"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/gold"
         android:contentDescription="GOLD"
         android:layout_marginBottom="32dp" />
 

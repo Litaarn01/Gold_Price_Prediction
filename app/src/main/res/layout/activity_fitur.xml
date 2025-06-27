@@ -12,9 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:background="#A5D6A7">>
+        android:background="#A5D6A7">
 
-        <!-- Touch target back button diperbesar -->
         <FrameLayout
             android:id="@+id/backButtonContainer"
             android:layout_width="48dp"
@@ -63,10 +62,10 @@
                 android:id="@+id/fiturList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="• Prediksi harga emas berdasarkan data tanggal dan harga tertinggi\n• Model AI berbasis TensorFlow Lite\n• Input data secara langsung\n• Tampilan hasil prediksi secara numerik\n• Visualisasi grafik hasil prediksi\n• Penyimpanan lokal hasil prediksi"
                 android:textColor="#000000"
                 android:textSize="16sp"
-                android:layout_marginBottom="16dp"
-                android:text="• Prediksi harga emas berdasarkan data tanggal dan harga tertinggi\n• Model AI berbasis TensorFlow Lite\n• Input data secara langsung\n• Tampilan hasil prediksi secara numerik\n• Visualisasi grafik hasil prediksi\n• Penyimpanan lokal hasil prediksi" />
+                android:layout_marginBottom="16dp" />
 
             <!-- Penjelasan Tambahan -->
             <TextView
@@ -82,11 +81,19 @@
                 android:id="@+id/listTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Date"
+                android:text="1. Date"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="#333333"
                 android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipe Data: datetime64[ns]\nBentuk Nilai fitur: Tanggal Spesifik"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -94,18 +101,53 @@
                 android:text="Kolom ini berisi informasi tanggal setiap pencatatan harga emas. Tanggal digunakan sebagai referensi waktu untuk model melakukan prediksi tren pergerakan harga emas dari waktu ke waktu."
                 android:textSize="16sp"
                 android:textColor="#333333"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="24dp" />
 
-            <!-- HIGH PRICE -->
+            <!-- OPEN -->
             <TextView
-                android:id="@+id/highTitle"
+                android:id="@+id/openTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="High Price"
+                android:text="2. Open"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="#333333"
                 android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipe Data: float64\nBentuk Nilai fitur: Numerik"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Menunjukkan harga pembukaan emas pada hari tersebut. Data ini membantu model memahami harga awal sebelum pergerakan pasar."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="24dp" />
+
+            <!-- HIGH -->
+            <TextView
+                android:id="@+id/highTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. High Price"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipe Data: float64\nBentuk Nilai fitur: Numerik"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -113,14 +155,14 @@
                 android:text="Merupakan harga tertinggi emas yang tercatat dalam satu hari tertentu. Nilai ini digunakan untuk membantu model menentukan puncak pergerakan harga sebagai input prediksi selanjutnya."
                 android:textSize="16sp"
                 android:textColor="#333333"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="24dp" />
 
-            <!-- LOW PRICE -->
+            <!-- LOW -->
             <TextView
                 android:id="@+id/lowTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Low Price"
+                android:text="4. Low Price"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="#333333"
@@ -129,10 +171,46 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Menunjukkan harga terendah emas yang tercatat pada hari tersebut. Data ini memberikan gambaran tentang fluktuasi harian dan digunakan sebagai bagian dari analisis risiko dalam prediksi harga."
+                android:text="Tipe Data: float64\nBentuk Nilai fitur: Numerik"
                 android:textSize="16sp"
                 android:textColor="#333333"
                 android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Menunjukkan harga terendah emas yang tercatat pada hari tersebut. Data ini memberikan gambaran tentang fluktuasi harian dan digunakan sebagai bagian dari analisis risiko dalam prediksi harga."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="24dp" />
+
+            <!-- PRICE -->
+            <TextView
+                android:id="@+id/priceTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. Price"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipe Data: float64\nBentuk Nilai fitur: Numerik"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Angka desimal yang mewakili harga penutupan emas pada tanggal tersebut (misalnya, 1311.10). Ini adalah kolom utama yang datanya digunakan untuk membangun fitur input ke model LSTM."
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:layout_marginBottom="24dp" />
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

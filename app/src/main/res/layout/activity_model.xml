@@ -159,6 +159,33 @@
                 android:textColor="#333333"
                 android:text="Fungsi define_model() membangun model prediksi menggunakan arsitektur RNN berbasis LSTM. Model terdiri dari tiga lapisan LSTM berisi 64 unit, dengan dropout untuk mencegah overfitting, diikuti Dense 32 neuron dan 1 output neuron. Model dikompilasi dengan loss MSE dan optimizer Nadam." />
 
+            <!-- Accuracy -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Acccuracy"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/accuracyImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_accuracy" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textSize="16sp"
+                android:textColor="#333333"
+                android:text="• Test Loss: Nilai loss yang sangat kecil (0.000469...) menunjukkan bahwa model memiliki kinerja yang sangat baik dalam memprediksi harga di test set.\n• Test MAPE: Nilai MAPE sekitar 2.12% berarti rata-rata kesalahan prediksi model adalah sekitar 2.12% dari harga emas sebenarnya di test set. Ini adalah nilai MAPE yang cukup rendah, menunjukkan model yang cukup akurat.\n• Test Accuracy: Akurasi model sekitar 97.88% menunjukkan bahwa model mampu memprediksi harga emas dengan sangat baik pada data yang belum pernah dilihat sebelumnya (test set). " />
+
+
             <!-- Plot Model -->
             <TextView
                 android:layout_width="wrap_content"

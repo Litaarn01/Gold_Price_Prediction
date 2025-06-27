@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:background="#A5D6A7">>
+        android:background="#A5D6A7">
 
         <!-- Touch target back button diperbesar -->
         <FrameLayout
@@ -74,7 +74,7 @@
                 android:textSize="16sp"
                 android:textColor="#333333"
                 android:layout_marginBottom="16dp"
-                android:text="Dataset yang digunakan dalam aplikasi ini berisi data historis harga emas harian. Beberapa kolom yang digunakan untuk pelatihan model antara lain:\n\n• Tanggal\n• Harga Tertinggi Harian\n• Harga Terendah\n\nData ini kemudian diproses dan digunakan sebagai input untuk model machine learning yang dipakai dalam aplikasi.\n\nSumber dataset dapat berupa data dari Kaggle" />
+                android:text="Dataset yang digunakan dalam aplikasi ini berisi data historis harga emas harian. Beberapa kolom yang digunakan untuk pelatihan model antara lain:\n\n• Date\n• Price\n• Open\n• High Price\n• Low Price\n• Volume\n• Change\n\nData ini kemudian diproses dan digunakan sebagai input untuk model machine learning yang dipakai dalam aplikasi.\n\nSumber dataset dapat berupa data dari Kaggle" />
 
             <!-- List Dataset -->
             <TextView
@@ -87,104 +87,194 @@
                 android:textColor="#333333"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Grid Dataset -->
-            <LinearLayout
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="3"
-                android:layout_marginBottom="24dp">
+                android:scrollbars="horizontal">
 
-                <!-- Kolom Date -->
+                <!-- Grid Dataset -->
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_card_column"
-                    android:padding="8dp">
+                    android:orientation="horizontal"
+                    android:weightSum="7"
+                    android:layout_marginBottom="24dp">
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <!-- Kolom Date -->
+                    <LinearLayout
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="Date"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:gravity="center"
-                        android:layout_marginBottom="4dp" />
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_card_column"
+                        android:padding="8dp">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#888" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Date"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="4dp" />
 
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-02" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-03" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-04" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-05" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-06" android:padding="4dp" />
-                </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#888" />
 
-                <!-- Kolom High -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_card_column"
-                    android:padding="8dp">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-02" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-03" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-04" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-05" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2013-01-06" android:padding="4dp" />
+                    </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <!-- Kolom Price -->
+                    <LinearLayout
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="High Price"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:gravity="center"
-                        android:layout_marginBottom="4dp" />
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_card_column"
+                        android:padding="8dp">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#888" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Price"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="4dp" />
 
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1695.0" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1689.3" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1664.4" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1663.8" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1662.6" android:padding="4dp" />
-                </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#888" />
 
-                <!-- Kolom Low -->
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_card_column"
-                    android:padding="8dp">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,826.20" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,826.00" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,815.80" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,823.10" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,809.70" android:padding="4dp" />
+                    </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <!-- Kolom Open -->
+                    <LinearLayout
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="Low Price"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:gravity="center"
-                        android:layout_marginBottom="4dp" />
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_card_column"
+                        android:padding="8dp">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="#888" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Open"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="4dp" />
 
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1672.1" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1664.3" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1630.0" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="164.3" android:padding="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1648.8" android:padding="4dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#888" />
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,821.80" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,812.30" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,822.40" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,808.20" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,805.80" android:padding="4dp" />
+                    </LinearLayout>
+
+                    <!-- Kolom High -->
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_card_column"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="High Price"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="4dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#888" />
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,832.40" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,827.30" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,822.80" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,842.90" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,811.95" android:padding="4dp" />
+                    </LinearLayout>
+
+                    <!-- Kolom Low -->
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_card_column"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Low Price"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="4dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#888" />
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,819.80" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,811.20" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text=",804.20" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,841.90" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,811.95" android:padding="4dp" />
+                    </LinearLayout>
+
+                    <!--   Change% -->
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_card_column"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Low Price"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="4dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#888" />
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0.01%" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0.56%" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="-0.40%" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0.74%" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="0.30%" android:padding="4dp" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </HorizontalScrollView>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

@@ -40,7 +40,7 @@
 
             <!-- Menu Item 1 -->
             <LinearLayout style="@style/MenuItem" android:layout_height="80dp" android:onClick="openAbout">
-                <ImageView android:src="@drawable/ic_person" style="@style/MenuIcon" />
+                <ImageView android:src="@drawable/icon_about" style="@style/MenuIcon" />
                 <TextView android:text="Tentang Aplikasi" style="@style/MenuText" />
             </LinearLayout>
             <View style="@style/MenuDivider" />
@@ -73,6 +73,16 @@
                     style="@style/MenuText"
                     android:layout_width="wrap_content"
                     android:text="Simulasi" />
+            </LinearLayout>
+            <View style="@style/MenuDivider" />
+
+            <!-- Menu Item 6 -->
+            <LinearLayout style="@style/MenuItem" android:layout_height="80dp" android:onClick="openSimulasi">
+                <ImageView android:src="@drawable/ic_person" style="@style/MenuIcon" />
+                <TextView
+                    style="@style/MenuText"
+                    android:layout_width="wrap_content"
+                    android:text="Profile" />
             </LinearLayout>
             <View style="@style/MenuDivider" />
 
