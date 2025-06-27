@@ -240,9 +240,38 @@
 
                         <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,819.80" android:padding="4dp" />
                         <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,811.20" android:padding="4dp" />
-                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text=",804.20" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,804.20" android:padding="4dp" />
                         <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,841.90" android:padding="4dp" />
                         <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1,811.95" android:padding="4dp" />
+                    </LinearLayout>
+
+                    <!-- Kolom Volume -->
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_card_column"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Vol"
+                            android:textStyle="bold"
+                            android:textColor="#000"
+                            android:gravity="center"
+                            android:layout_marginBottom="4dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#888" />
+
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="107.50K" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="105.99K" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="118.08K" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="159.62K" android:padding="4dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="NaN" android:padding="4dp" />
                     </LinearLayout>
 
                     <!--   Change% -->
@@ -256,7 +285,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Low Price"
+                            android:text="Change %"
                             android:textStyle="bold"
                             android:textColor="#000"
                             android:gravity="center"
