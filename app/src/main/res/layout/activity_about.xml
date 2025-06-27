@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:background="#FFF8E1">
 
-    <!-- Header: Back button + Judul -->
     <RelativeLayout
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
@@ -42,7 +41,6 @@
             android:textColor="#333333" />
     </RelativeLayout>
 
-    <!-- Isi ScrollView -->
     <ScrollView
         android:id="@+id/scrollContent"
         android:layout_below="@id/headerLayout"

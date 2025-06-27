@@ -79,6 +79,14 @@
             android:textColor="#666666" />
 
         <TextView
+            android:id="@+id/profileKls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kelas : IF/M/B"
+            android:textSize="16sp"
+            android:textColor="#666666" />
+
+        <TextView
             android:id="@+id/profileEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

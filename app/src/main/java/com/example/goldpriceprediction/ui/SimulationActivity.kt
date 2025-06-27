@@ -48,7 +48,6 @@ class SimulationActivity : AppCompatActivity() {
             showDatePicker()
         }
 
-        // Tombol prediksi ditekan
         btnPrediksi.setOnClickListener {
             val gramInput = inputJumlahGram.text.toString().toFloatOrNull()
             if (gramInput == null || gramInput <= 0f) {
@@ -72,18 +71,10 @@ class SimulationActivity : AppCompatActivity() {
                 val hargaPerGram = result?.let { it * (maxHarga - minHarga) + minHarga }
                 val totalHarga = hargaPerGram?.times(gramInput)
 
-                // Format ke dalam mata uang Rupiah
                 val formatted = NumberFormat.getCurrencyInstance(Locale("in", "ID"))
                     .format(totalHarga ?: 0f)
 
-                // Tampilkan hasil ke UI
-                outputHasil.text = "Hasil Prediksi Harga Emas: $formatted"
-
-                // Kirim ke ResultActivity
-                val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra("HASIL_PREDIKSI", formatted)
-                intent.putExtra("TANGGAL_PREDIKSI", selectedDate)
-                startActivity(intent)
+                outputHasil.text = "Tanggal Prediksi: $selectedDate\nHasil Prediksi Harga Emas: $formatted"
 
             } catch (e: Exception) {
                 e.printStackTrace()
